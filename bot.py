@@ -18,8 +18,12 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 KEY = os.getenv('API_KEY')
 SECRET = os.getenv('API_SECRET')
-GUILD_IDS = [632049514001203227, 268982240569065472]
 PREFIX = ";"
+
+guildFile = open('guilds.json')
+guildDict = json.load(guildFile)
+GUILD_IDS = guildDict["ids"]
+guildFile.close()
 
 userFile = open('usernames.json')
 fileDict = json.load(userFile)
